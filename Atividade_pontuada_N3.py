@@ -79,6 +79,5 @@ if login_cadastrado == login and senha_cadastrada == senha:
     print(f"Total de Descontos: R$ {descontoTotal:.2f}")
     print(f"Salário Líquido: R$ {SalarioLiquido:.2f}\n")
     
-
 else:
     print("login ou senha incorretos")
