@@ -13,13 +13,13 @@ lista_funcionarios = [] #lista
 class Funcionario:
     nome: str
     cpf: str
-    data_nascimento: str
+    salario: int
     funcao: str
     #mostar os dados
     def mostrar_dados(self):
         print(f"Nome: {self.nome}")
         print(f"CPF: {self.cpf}")
-        print(f"Data de nascimento: {self.data_nascimento}")
+        print(f"Salario: {self.salario}")
         print(f"Função: {self.funcao}\n")
 #analizar se a lista estar vazia
 def verificar_lista_vazia(lista):
@@ -33,7 +33,7 @@ def adicionar(lista):
     funcionario = Funcionario(
         nome=input("Nome: "),
         cpf=input("CPF: "),
-        data_nascimento=input("Data de nascimento: "),
+        salario=input("Salario: "),
         funcao=input("Função: ")
     )
     lista.append(funcionario)
@@ -55,7 +55,7 @@ def atualizar(lista):
             print("= Digite os novos dados do funcionário = ")
             funcionario.nome = input("Nome: ")
             funcionario.cpf = input("CPF: ")
-            funcionario.data_nascimento = input("Data de nascimento: ")
+            funcionario.salario = input("Data de nascimento: ")
             funcionario.funcao = input("Função: ")
             print("Funcionário atualizado com sucesso.\n")
             return
@@ -68,7 +68,7 @@ def exportar_csv(lista, nome_arquivo="Funcionarios.csv"):
         writer = csv.writer(csvfile)
         writer.writerow(["Nome", "CPF", "Data de Nascimento", "Função"])
         for funcionario in lista:
-            writer.writerow([funcionario.nome, funcionario.cpf, funcionario.data_nascimento, funcionario.funcao])
+            writer.writerow([funcionario.nome, funcionario.cpf, funcionario.salario, funcionario.funcao])
     print(f"\nDados exportados com sucesso para '{nome_arquivo}'.\n")
 #case 4 (excluir um funcionario da existencia)
 def excluir(lista):
